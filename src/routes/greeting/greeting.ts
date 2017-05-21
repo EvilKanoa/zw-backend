@@ -14,7 +14,7 @@ export class Greeting {
     }
 
     private getGreeting = (req: Request, res: Response, next: NextFunction) => {
-        res.send("Hello there friend!");
+        res.send("Hello there friend! :)");
     }
 
     private postGreeting = (req: Request, res: Response, next: NextFunction) => {
