@@ -24,7 +24,7 @@ class App {
         let router = express.Router();
         router.get('/', (req, res, next) => {
             res.json({
-                message: 'Hello world!'
+                message: 'Hello World!'
             });
         });
         this.express.use('/', router);
