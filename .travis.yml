@@ -18,7 +18,7 @@ deploy:
   on: &2
     branch: master
   bucket: zw-backend
-  region: us-west-2c
+  region: us-west-2
 - provider: codedeploy
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
@@ -27,7 +27,7 @@ deploy:
   bundle_type: zip
   application: zw-backend
   deployment_group: zw-backend
-  region: us-west-2c
+  region: us-west-2
   on: *2
 
 script:
