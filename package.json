@@ -1,0 +1,43 @@
+{
+  "name": "zw-backend",
+  "version": "1.0.0",
+  "description": "RESTful API backend for the ZombieWorld game",
+  "author": "ZombieWorld Dev Team",
+  "private": true,
+  "main": "dist/index",
+  "types": "dist/index",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/index.ts"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.16.3",
+    "@types/chai": "^3.5.2",
+    "@types/chai-http": "0.0.30",
+    "@types/debug": "0.0.29",
+    "@types/express": "^4.0.35",
+    "@types/lodash": "^4.14.64",
+    "@types/mocha": "^2.2.41",
+    "@types/morgan": "^1.7.32",
+    "@types/node": "^7.0.21",
+    "@types/pg": "^6.1.40",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^4.3.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-typescript": "^3.1.6",
+    "gulp-util": "^3.0.8",
+    "lodash": "^4.17.4",
+    "mocha": "^3.4.1",
+    "pg": "^6.2.2",
+    "ts-node": "^3.0.4",
+    "typescript": "^2.3.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "debug": "^2.6.8",
+    "express": "^4.15.3",
+    "morgan": "^1.8.1"
+  }
+}
