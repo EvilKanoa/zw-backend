@@ -1,6 +1,38 @@
 language: node_js
 node_js:
     - "node"
+
 before_script:
     - npm install -g gulp
-script: gulp test
+
+cache:
+  directories:
+    - node_modules
+
+deploy:
+- provider: s3
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  local_dir: dpl_cd_upload
+  skip_cleanup: true
+  on: &2
+    repo: evilkanoa/zw-backend
+  bucket: zw-backend
+  region: us-west-2c
+- provider: codedeploy
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  bucket: zw-backend
+  key: latest.zip
+  bundle_type: zip
+  application: zw-backend
+  deployment_group: zw-backend
+  region: us-west-2c
+  on: *2
+
+script:
+    - gulp test
+    - echo Tests passed... Uploading to EC2 instance
+    - zip -r latest *
+    - mkdir -p dpl_cd_upload
+    - mv latest.zip dpl_cd_upload/latest.zip
