@@ -9,6 +9,9 @@ cache:
   directories:
     - node_modules
 
+notifications:
+    slack: zombieworlddev:V1FpfcK1CWkwiaW3aCxGxJOy
+
 deploy:
 - provider: s3
   access_key_id: $AWS_ACCESS_KEY
